@@ -1,0 +1,1091 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    /* background-color: black; */
+}
+
+#main {
+    position: relative;
+}
+
+/* video {
+    position: absolute;
+    z-index: -99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    object-fit: cover;
+    background: rgba(0, 0, 0, 0.5);
+} */
+
+video {
+    position: absolute;
+    z-index: -99;
+    top: 0;
+
+    width: 100%;
+    height: 45rem;
+
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* Video Overlay for better text visibility */
+#main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45rem;
+    background: rgba(9, 51, 65, 0.5);
+    z-index: -98;
+    pointer-events: none;
+}
+
+:root {
+    /* ============================================
+       COMMON COLORS
+       ============================================ */
+    --black-color: #000;
+    --white-color: #FFFFFF;
+    --white-color-light: #D1D1D1;
+    --gray-color: #B5B4B2;
+    --gray-color-medium: #808080;
+    --gray-color-light: rgb(231, 231, 231);
+    --gray-color-lighter: rgb(221, 221, 221);
+
+    /* ============================================
+       MAIN BRAND COLORS
+       ============================================ */
+    --main-secondary-color: #FAE588;
+    --main-secondary-color-dark: #BBAD6F;
+
+    /* ============================================
+       NAVBAR SECTION
+       ============================================ */
+    --navbar-bg-color: #093341;
+    --navbar-text-color: var(--white-color);
+    --navbar-logo-text-color: var(--navbar-bg-color);
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    --hero-text-color: var(--white-color);
+    --hero-subtitle-color: var(--gray-color);
+    --hero-button-text-color: var(--black-color);
+    --hero-button-bg-color: var(--main-secondary-color);
+    --hero-portfolio-icon-bg: var(--white-color);
+    --hero-portfolio-icon-text: var(--black-color);
+    --hero-portfolio-link-color: var(--gray-color-medium);
+    --hero-rating-text-color: var(--white-color);
+    --hero-video-overlay: rgba(0, 0, 0, 0.5);
+
+    /* ============================================
+       ABOUT SECTION
+       ============================================ */
+    --about-text-color: var(--gray-color-medium);
+    --about-button-text-color: var(--white-color);
+    --about-button-bg-color: #073341;
+
+    /* ============================================
+       SERVICES SECTION
+       ============================================ */
+    --services-text-color: var(--gray-color-medium);
+    --services-card-text-color: var(--gray-color-medium);
+    --services-category-text-color: var(--black-color);
+    --services-category-icon-bg: var(--gray-color-light);
+
+    /* ============================================
+       WHY CHOOSE US SECTION
+       ============================================ */
+    --why-choose-us-button-text-color: var(--white-color);
+    --why-choose-us-button-bg-color: #073341;
+
+    /* ============================================
+       WORK FLOW SECTION
+       ============================================ */
+    --workflow-text-color: var(--gray-color-medium);
+    --workflow-card-bg-color: var(--gray-color-lighter);
+    --workflow-card-text-color: var(--black-color);
+    --workflow-button-text-color: var(--white-color);
+    --workflow-button-bg-color: #073341;
+
+    /* ============================================
+       FAQ SECTION
+       ============================================ */
+    --faq-text-color: var(--black-color);
+
+    /* ============================================
+       FOOTER SECTION
+       ============================================ */
+    --footer-bg-color: #021b27;
+    --footer-text-color: var(--white-color-light);
+    --footer-logo-bg-color: var(--main-secondary-color);
+    --footer-logo-text-color: var(--white-color);
+}
+
+/* ------ */
+/* navbar */
+/* ------ */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 6vw, 6rem);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.custom-navbar {
+    background-color: var(--navbar-bg-color);
+}
+
+.custom-navbar .nav-link:hover {
+    color: #81D86F !important;
+}
+
+.custom-navbar .nav-link.active {
+    color: #81D86F !important;
+}
+
+/* Navbar Left */
+.navbar #logo {
+    text-decoration: none;
+}
+
+#nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-left h5 {
+    color: var(--navbar-logo-text-color);
+    background-color: #81D86F;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100%;
+}
+
+#nav-left h4 {
+    color: var(--navbar-text-color);
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 0.3rem;
+    border-radius: 100%;
+}
+
+/* ------------ */
+/* Hero Section */
+/* ------------ */
+
+.hero-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    margin-top: 1rem;
+    padding-left: 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    margin-top: clamp(2rem, 6vw, 6rem);
+    font-size: clamp(2.2rem, 5vw, 3.7rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--hero-text-color);
+}
+
+.hero-section #h1-heading {
+    color: #81D86F;
+}
+
+.hero-section h5 {
+    padding: 0 clamp(1rem, 8vw, 15rem);
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 1.5rem;
+    color: var(--gray-color);
+    text-shadow: 3px 3px 10px var(--black-color);
+}
+
+.hero-section .button {
+    width: clamp(10rem, 40vw, 12rem);
+    height: clamp(2.75rem, 8vw, 3rem);
+    margin: auto;
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 450;
+    transition: all 0.4s ease;
+    color: var(--hero-button-text-color);
+    background-color: #81D86F;
+}
+
+.hero-section .button i {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+#portfolio-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#portfolio-links a {
+    text-decoration: none;
+    padding-top: 0.5rem;
+    font-weight: 600;
+    color: var(--hero-portfolio-link-color);
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links i {
+    padding: 0.5rem 0.7rem;
+    border-radius: 100%;
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin-right: 0.5rem;
+    color: var(--hero-portfolio-icon-text);
+    background-color: var(--hero-portfolio-icon-bg);
+}
+
+#rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#stars i {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #E4AB00;
+}
+
+#rating p {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-top: 0.8rem;
+    color: var(--hero-rating-text-color);
+}
+
+/* ----- */
+/* About */
+/* ----- */
+
+.about {
+    width: 100%;
+    height: auto;
+    margin-top: 10rem;
+    background-color: #F5FDFF;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 70%;
+    object-fit: contain;
+}
+
+.about-right {
+    padding-left: clamp(1rem, 8vw, 6rem);
+    align-content: center;
+    text-align: left;
+}
+
+.about-right .heading {
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: 650;
+    padding-bottom: 1.2rem;
+    position: relative;
+    /* required for ::after */
+}
+
+/* Custom bottom border */
+.about-right .heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    /* 👈 custom width */
+    height: 2px;
+    /* 👈 custom height */
+    background-color: #81d86f;
+}
+
+.about-right h2 {
+    font-size: 2rem;
+    font-weight: 550;
+    line-height: 1.6;
+}
+
+.about-right p {
+    font-size: 1rem;
+    margin: 2rem 0rem;
+    color: var(--about-text-color);
+}
+
+.about-right .button {
+    width: clamp(9.4rem, 40vw, 9.7rem);
+    height: clamp(2.6rem, 8vw, 2.8rem);
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 530;
+    transition: all 0.4s ease;
+    color: white;
+    background-color: #142E38;
+}
+
+.about-right i {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+/* Our Services */
+
+.our-services {
+    width: 100%;
+    height: auto;
+    margin-top: 6rem;
+}
+
+.our-services #heading {
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: 650;
+    padding-bottom: 1.2rem;
+    position: relative;
+}
+
+.our-services #heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    /* 👈 custom width */
+    height: 2px;
+    /* 👈 custom height */
+    background-color: #81d86f;
+}
+
+.our-services h2 {
+    font-size: 2rem;
+    font-weight: 550;
+    line-height: 1.6;
+}
+
+.our-services .row {
+    padding: 2rem 0;
+}
+
+.our-services a {
+    text-decoration: none;
+    color: #81D86F;
+}
+
+/* Row 2 */
+.services-cards {
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.services-cards h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #81D86F;
+}
+
+.services-cards p {
+    color: var(--services-card-text-color);
+}
+
+/* Services Category */
+.services-category {
+    border-radius: 50px;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.serv-cat-link {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0;
+    margin-right: 5rem;
+    color: var(--services-category-text-color);
+}
+
+.services-category i {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 50px;
+    color: #073341;
+    background-color: #D1E7DD;
+}
+
+/* ------------- */
+/* Why Choose Us */
+/* ------------- */
+
+.why-choose-us {
+    padding: clamp(1rem, 8vw, 3rem) 0;
+    width: 100%;
+    height: auto;
+    align-content: center;
+    margin-top: 6rem;
+    background-color: #F5FDFF;
+}
+
+.why-choose-us-left {
+    padding-right: clamp(1rem, 8vw, 6rem);
+}
+
+.why-choose-us-left .heading {
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: 650;
+    padding-bottom: 1.2rem;
+    position: relative;
+}
+
+.why-choose-us-left .heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 66px;
+    /* 👈 custom width */
+    height: 2px;
+    /* 👈 custom height */
+    background-color: #81d86f;
+}
+
+.why-choose-us-left h2 {
+    font-size: 2rem;
+    font-weight: 550;
+    line-height: 1.6;
+}
+
+.why-choose-us-left p {
+    margin: 2rem 0rem;
+}
+
+.satisfaction {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.circle {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+    background-color: #81D86F;
+}
+
+.why-choose-us-left .button {
+    width: clamp(7rem, 40vw, 7rem);
+    height: clamp(2.6rem, 8vw, 2.8rem);
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: 530;
+    transition: all 0.4s ease;
+    color: white;
+    background-color: #142E38;
+}
+
+/* ------------- */
+/* Our Work Flow */
+/* ------------- */
+
+.our-work-flow {
+    width: 100%;
+    height: auto;
+    align-content: center;
+    margin-top: 6rem;
+}
+
+.our-work-flow-left img {
+    width: 100%;
+    height: 100%;
+    min-height: 70%;
+    object-fit: contain;
+}
+
+/* Right */
+
+.our-work-flow-right {
+    padding: 0 clamp(1rem, 8vw, 6rem);
+}
+
+.our-work-flow-right .heading {
+    margin-bottom: 1.5rem;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: 650;
+    padding-bottom: 1.2rem;
+    position: relative;
+}
+
+.our-work-flow-right .heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    /* 👈 custom width */
+    height: 2px;
+    /* 👈 custom height */
+    background-color: #81d86f;
+}
+
+.our-work-flow-right h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.our-work-flow-right p {
+    font-size: 1rem;
+    margin: 2rem 0rem;
+    color: var(--workflow-text-color);
+}
+
+/* Cards */
+.cardd a {
+    text-decoration: none;
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #073341;
+    background-color: rgba(129, 216, 111, .2);
+}
+
+.cardd a:hover {
+    text-decoration: none;
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: white;
+    background-color: #073341;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0px 0px 8px rgb(172, 172, 172);
+}
+
+.our-work-flow .cardd h4 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: -1.5rem;
+}
+
+.our-work-flow .cardd p {
+    font-size: 1rem;
+}
+
+.our-work-flow-right .button {
+    width: clamp(10rem, 40vw, 12rem);
+    height: clamp(2.75rem, 8vw, 3rem);
+    margin: auto;
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 450;
+    transition: all 0.4s ease;
+    color: var(--hero-button-text-color);
+    background-color: #81D86F;
+}
+
+/* ---- */
+/* Faqs */
+/* ---- */
+
+.faqs {
+    width: 100%;
+    height: auto;
+    align-content: center;
+    margin-top: 6rem;
+}
+
+.faq {
+    padding-right: clamp(1rem, 8vw, 6rem);
+}
+
+.faqs h2 {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.faq h4 {
+    font-size: 1rem;
+}
+
+/* Default accordion item */
+.accordion-item {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+    border-top-left-radius: 0rem !important;
+    border-top-right-radius: 0rem !important;
+}
+
+/* Default button (simple) */
+.accordion-button {
+    background-color: #fff;
+    color: #111;
+    box-shadow: none;
+}
+
+/* Focus + Open state only */
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+    background-color: #142E38;
+    color: #fff;
+}
+
+/* Remove bootstrap shadow */
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+/* Accordion body */
+.accordion-body {
+    background-color: #fff;
+    color: #444;
+}
+
+/* Make icon white */
+.accordion-button::after {
+    filter: invert(1);
+}
+
+/* send query */
+
+.custom-btn {
+    width: clamp(10rem, 40vw, 10rem);
+    height: clamp(2.75rem, 8vw, 3rem);
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.9rem;
+    white-space: nowrap;
+
+    color: #fff;
+    background-color: #142E38;
+    border-radius: 0rem !important;
+    border: none;
+
+    transition: none;
+    /* ❌ no animation */
+}
+
+/* Disable hover, focus, active effects */
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:active {
+    background-color: #142E38;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+
+/* ------------------ */
+/* Client Testimonial */
+/* ------------------ */
+
+/* Newer------------------ */
+
+.testimonials-section {
+    margin-top: 6rem;
+}
+
+.swiper {
+    padding: 3rem 0rem;
+    /* margin-top: 10rem; */
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+.swiper-pagination {
+    margin-top: 2rem;
+    /* dots aur cards ke beech gap */
+    position: relative;
+    /* safe positioning */
+}
+
+.swiper-pagination-bullet {
+    background: #cfd8dc;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #142E38;
+}
+
+/* -------------- */
+/* Request Sction */
+/* -------------- */
+
+.cta-section {
+    background-color: #072f38;
+    padding: 3rem 1rem;
+    position: relative;
+    overflow: hidden;
+    margin-top: 6rem;
+}
+
+/* Decorative blobs (optional but image jaisa feel) */
+.cta-section::before,
+.cta-section::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 120px;
+    background: #134445;
+    border-radius: 100px;
+    z-index: -1;
+}
+
+.cta-section::before {
+    top: -40px;
+    left: -40px;
+}
+
+.cta-section::after {
+    bottom: -40px;
+    right: -40px;
+}
+
+.cta-section h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 680;
+    margin-bottom: 0.5rem;
+}
+
+.cta-section p {
+    color: #b7d1d8;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-request {
+    background-color: #81d86f;
+    color: white;
+    padding: 0.8rem 1.6rem;
+    font-weight: 580;
+    text-decoration: none;
+    border-radius: 0.2rem !important;
+}
+
+.btn-contact {
+    background-color: #0c3f4b;
+    color: #fff;
+    padding: 0.7rem 1.6rem;
+    font-weight: 580;
+    text-decoration: none;
+    border-radius: 0.2rem !important;
+}
+
+.btn-request:hover,
+.btn-request:focus,
+.btn-request:active {
+    background-color: #81d86f;
+    color: white;
+    box-shadow: none;
+}
+
+.btn-contact:hover,
+.btn-contact:focus,
+.btn-contact:active {
+    background-color: #0c3f4b;
+    color: #fff;
+    box-shadow: none;
+}
+
+/* Footer */
+
+.footer-bg {
+    background-color: #0b3440;
+    padding: 4rem 2rem 1.5rem;
+}
+
+.footer p,
+.footer a,
+.footer li {
+    color: #b5cbd3;
+}
+
+.footer h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+}
+
+/* Lists */
+.footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer li {
+    list-style: none;
+    margin-bottom: 0.8rem;
+}
+
+.footer a {
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* Hover */
+.footer a:hover {
+    color: #81D86F;
+}
+
+/* Logo */
+#logo-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+#logo-icon h5 {
+    background: #81D86F;
+    color: #0b3440;
+    border-radius: 50%;
+    padding: 0.35rem 0.6rem;
+}
+
+#logo-icon h4 {
+    font-weight: 800;
+    color: white;
+}
+
+/* Subscribe box */
+.subscribe-box {
+    display: flex;
+    background: #123f4b;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.subscribe-box input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.7rem;
+    color: #fff;
+}
+
+.subscribe-box input::placeholder {
+    color: #b5cbd3;
+}
+
+.subscribe-box button {
+    background: #0f4b59;
+    border: none;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+/* Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: #b5cbd3;
+}
+
+
+@media (max-width: 992px) {
+
+    video,
+    #main::before {
+        height: 10vh;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Make the background video + overlay lighter to load and fit on phones */
+    video,
+    #main::before {
+        height: 100vh;
+    }
+
+    /* Softer navbar spacing on phones */
+    .navbar {
+        padding: 1rem 1.25rem;
+    }
+
+    .navbar li {
+        text-align: center;
+    }
+
+    /* Hero: scale text and spacing down */
+    .hero-section h1 {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        margin-top: 2.5rem;
+    }
+
+    .hero-section h5 {
+        padding: 0 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-section .button {
+        width: 100%;
+        max-width: 14rem;
+    }
+
+    /* Stack rating and portfolio links when narrow */
+    #portfolio-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #rating {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+
+    /* Let sections size to their content and add breathing room */
+    .about,
+    .our-services,
+    .why-choose-us,
+    .our-work-flow,
+    .faqs {
+        min-height: auto;
+        padding: 1rem 1.25rem;
+        /* margin-top: 3rem; */
+    }
+
+    .about .our-services .why-choose-us .our-work-flow {
+        text-align: center;
+    }
+
+    /* Footer: stack columns full width */
+    .footer {
+        padding: 2rem 1.25rem;
+    }
+
+    .renol-icon,
+    .pages,
+    .useful-links,
+    .contact-us {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ============================================
+   Desktop footer layout (>= 992px)
+   Returns columns to 4-up grid while keeping
+   mobile/tablet full-width stacks.
+   ============================================ */
+@media (min-width: 992px) {
+    .footer {
+        padding: 4rem 0;
+    }
+
+    .renol-icon,
+    .pages,
+    .useful-links,
+    .contact-us {
+        width: 25%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-bottom: 0;
+    }
+}

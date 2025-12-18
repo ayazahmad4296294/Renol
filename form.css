@@ -1,0 +1,78 @@
+/* Page Background */
+.contact-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    align-items: center;
+}
+
+/* Main Box */
+.auth-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 0rem !important;
+}
+
+/* Form */
+.form-label {
+    font-weight: 500;
+}
+
+.form-control {
+    border: 1.5px solid #093341;
+    padding: 0.7rem;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #093341;
+    box-shadow: none;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #093341;
+    border: none;
+    font-weight: 600;
+    padding: 0.7rem;
+}
+
+/* Tabs */
+.nav-tabs {
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    color: #093341;
+    border-bottom: 2px solid #093341;
+    font-weight: 700;
+}
+
+/* Links */
+.btn-link {
+    text-decoration: none;
+    font-weight: 600;
+    color: #093341;
+}
+
+.btn-primary:hover {
+    color: white !important;
+    background-color: #093341 !important;
+    border-color: white !important;
+}
